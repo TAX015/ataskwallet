@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: atask
+  password: atask123
+  host: localhost
+
+development:
+  <<: *default
+  database: ataskwallet_dev
+
+test:
+  <<: *default
+  database: ataskwallet_test
+
+# production:
+#   <<: *default
+#   database: your_project_name_production
+#   username: your_postgres_production_username
+#   password: <%= ENV['POSTGRES_PRODUCTION_PASSWORD'] %>

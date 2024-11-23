@@ -1,0 +1,12 @@
+//= link_tree ../images
+//= link_directory ../stylesheets .css
+//= link_tree ../../javascript .js
+//= link_tree ../../../vendor/javascript .js
+//= link application.css
+//= link application.js
+//= link fontawesome-free/css/all.min.css
+//= link jquery/jquery.min.js
+//= link bootstrap/js/bootstrap.bundle.min.js
+//= link jquery-easing/jquery.easing.min.js
+//= link application.min.js
+//= link chart.js/Chart.min.js
