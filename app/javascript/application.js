@@ -1,6 +1,13 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "@hotwired/turbo-rails"
-import "controllers"
+import "@hotwired/turbo-rails";
+import "controllers";
+
+import "jquery/jquery.min";
+import "bootstrap/js/bootstrap.bundle.min";
+import "jquery-easing/jquery.easing.min";
+import "chart.js/Chart.min";
+import "demo/chart-area-demo";
+import "demo/chart-pie-demo";
 
 (function($) {
   "use strict"; // Start of use strict

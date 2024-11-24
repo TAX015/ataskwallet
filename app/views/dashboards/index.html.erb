@@ -27,6 +27,21 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
+        Master
+      </div>
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Users</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
           Interface
       </div>
 
@@ -304,7 +319,7 @@
                   <li class="nav-item dropdown no-arrow">
                       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                          <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= @current_user.name %></span>
                           <img class="img-profile rounded-circle"
                               src="<%= asset_path('undraw_profile.svg') %>">
                       </a>
@@ -705,7 +720,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
               <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-              <a class="btn btn-primary" href="login.html">Logout</a>
+              <a class="btn btn-primary" href="<%= logout_path %>">Logout</a>
           </div>
       </div>
   </div>
