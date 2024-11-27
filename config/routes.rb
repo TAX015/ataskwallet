@@ -9,4 +9,18 @@ Rails.application.routes.draw do
   get "login", to: "sessions#new"
   get "logout", to: "sessions#destroy"
   post "login", to: "sessions#create"
+
+  resources :transactions do
+    collection do
+      get "deposit", to: "transactions#deposit"
+      get "withdraw", to: "transactions#withdraw"
+      get "transfer", to: "transactions#transfer"
+
+      post "deposit", to: "transactions#create_deposit"
+      post "withdraw", to: "transactions#create_withdraw"
+      post "transfer", to: "transactions#create_transfer"
+    end
+  end
+
+  resources :users
 end

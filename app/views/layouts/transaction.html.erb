@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ataskwallet</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "fontawesome-free/css/all.min", rel: "stylesheet", type: "text/css" %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i", rel: "stylesheet" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload", "media": "all" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <%= render "layouts/nav" %>
+
+      <div id="content" class="w-100">
+        <%= render "layouts/header" %>
+
+        <% flash.each do |key, message| %>
+          <div class="alert alert-<%= bootstrap_class_for_flash(key) %> alert-dismissible fade show" role="alert">
+            <%= message %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+          </div>
+        <% end %>
+
+        <%= yield %>
+      </div>
+    </div>
+
+    <%= render 'layouts/footer' %>
+  </body>
+</html>
