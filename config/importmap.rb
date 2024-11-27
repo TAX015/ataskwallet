@@ -11,3 +11,5 @@ pin_all_from "vendor/bootstrap", under: "bootstrap"
 pin_all_from "vendor/jquery-easing", under: "jquery-easing"
 pin_all_from "vendor/chart.js", under: "chart.js"
 pin_all_from "app/javascript/demo", under: "demo"
+
+pin "select2"

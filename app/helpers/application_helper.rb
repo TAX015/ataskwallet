@@ -11,6 +11,6 @@ module ApplicationHelper
   end
 
   def to_currency number, unit="", precision=0
-    number_to_currency(number, :unit => unit, :precision => precision, :separator => ",", :delimiter => ".")
+    number_to_currency(number, :unit => unit, :precision => precision, :separator => ".", :delimiter => ",")
   end
 end

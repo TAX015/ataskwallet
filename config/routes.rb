@@ -10,6 +10,15 @@ Rails.application.routes.draw do
   get "logout", to: "sessions#destroy"
   post "login", to: "sessions#create"
 
+  resources :users
+
+  resources :stocks do
+    collection do
+      get "get_prices"
+      get "prices"
+    end
+  end
+
   resources :transactions do
     collection do
       get "deposit", to: "transactions#deposit"
@@ -21,6 +30,4 @@ Rails.application.routes.draw do
       post "transfer", to: "transactions#create_transfer"
     end
   end
-
-  resources :users
 end

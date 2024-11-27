@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Stock Prices</h6>
+    </div>
+    <div class="card-body">
+      <%= form_with url: get_prices_stocks_path, method: :get, local: true, class: "stock" do |f| %>
+        <div class="form-group">
+          <%= f.label :identifiers, "Recipient", class: "form-label" %>
+          <%= f.select :identifiers, 
+            options_for_select(@stocks.map { |stock| [stock[:identifier], stock[:identifier]] }), 
+            { prompt: "Select stocks" }, 
+            class: "form-control select2", multiple: true %>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit "Get Prices", class: "btn btn-primary btn-user btn-block" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

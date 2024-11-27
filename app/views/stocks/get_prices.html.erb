@@ -1,0 +1,48 @@
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">Stock Prices</h1>
+
+  <!-- DataTales -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Stock Prices</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th width="20%">Identifier</th>
+              <th width="20%">Company</th>
+              <th width="20%">Industry</th>
+              <th>ISIN</th>
+              <th class="text-right">Last Price</th>
+              <th>Last Update</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% total = 0 %>
+            <% @stocks.each do |stock| %>
+              <% total += stock[:lastPrice].to_f %>
+              <tr>
+                <td><%= stock[:identifier] %></td>
+                <td><%= stock[:meta][:companyName] %></td>
+                <td><%= stock[:meta][:industry] %></td>
+                <td><%= stock[:meta][:isin] %></td>
+                <td class="text-right"><%= to_currency(stock[:lastPrice].to_f, '', 2) %></td>
+                <td><%= stock[:lastUpdateTime] %></td>
+              </tr>
+            <% end %>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="4" class="text-right">Total</th>
+              <th colspan="2" class="text-right"><%= to_currency(total, '', 2) %></th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

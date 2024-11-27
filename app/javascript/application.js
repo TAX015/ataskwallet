@@ -8,6 +8,7 @@ import "jquery-easing/jquery.easing.min";
 import "chart.js/Chart.min";
 import "demo/chart-area-demo";
 import "demo/chart-pie-demo";
+import "select2";
 
 (function($) {
   "use strict"; // Start of use strict
@@ -62,6 +63,10 @@ import "demo/chart-pie-demo";
       scrollTop: ($($anchor.attr('href')).offset().top)
     }, 1000, 'easeInOutExpo');
     e.preventDefault();
+  });
+
+  $(document).on('turbo:load', function() {
+    $('.select2').select2();
   });
 
 })(jQuery); // End of use strict
